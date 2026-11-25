@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bunyakovsky-demo"
+version = "1.6.3"
+description = "Educational demo of Bunyakovsky's conjecture: hypothesis checks, prime-value scans, Bateman-Horn heuristic"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Hermes Agent" }]
+keywords = ["bunyakovsky", "conjecture", "primes", "number-theory",
+            "bateman-horn", "landau", "demo", "education"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Education :: Mathematics",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = []
+
+[project.optional-dependencies]
+viz = ["matplotlib>=3.7"]   # --plot/--movie/--stills; mp4 needs ffmpeg on PATH
+
+[project.scripts]
+bunyakovsky-demo = "bunyakovsky_demo.demo:cli"
+bunyakovsky-gui = "bunyakovsky_demo.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

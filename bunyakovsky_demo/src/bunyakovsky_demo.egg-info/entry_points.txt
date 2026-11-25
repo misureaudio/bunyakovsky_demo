@@ -1,0 +1,3 @@
+[console_scripts]
+bunyakovsky-demo = bunyakovsky_demo.demo:cli
+bunyakovsky-gui = bunyakovsky_demo.gui:main
